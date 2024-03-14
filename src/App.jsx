@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 
+import Discription from './components/Discription/Discription.jsx'
+import Options from './components/Options/Options.jsx'
+import Feedback from './components/Feedback/Feedback.jsx'
+
+
+
+
 function App() {
   
   const cafeState = {
@@ -9,20 +16,22 @@ function App() {
     bad: 0
   };
   
-  // const [count, setCount] = useState(0);
+
+  const updateFeedback = (event) => {
+    console.log(event);
+  };
 
 
+  
   return (
-    <>
-  <h2>Sip Happens Café</h2>
-  <p>Please leave your feedback about our service by selecting one of the options below.</p>
-  <button>Good</button>
-  <button>Neutral</button>
-  <button>Bad</button>
-  <button>Reset</button>
-  <p>No feedback yet</p>
-    </>
+    
+    <div>
+      <Discription />
+      <Options updateFeedback={updateFeedback} />
+      <Feedback/>
+    </div>
   )
+
 }
 
 export default App
