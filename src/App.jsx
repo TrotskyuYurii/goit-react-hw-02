@@ -19,6 +19,10 @@ function App() {
     return stateRes;
   });
 
+  useEffect(() => {
+    localStorage.setItem("cafeStateValue", JSON.stringify(cafeState));
+  }, [cafeState]);
+  
   const [totalState, setTotalState] = useState(0);
 
   const updateFeedback = (event) => {
