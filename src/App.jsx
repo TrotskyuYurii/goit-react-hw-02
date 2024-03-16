@@ -7,10 +7,6 @@ import Feedback from './components/Feedback/Feedback.jsx'
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 816aea6f9b60dc740f803f26df64a9456e8b1fbe
 function App() {
   
   const cafeStateInitial = {
@@ -19,13 +15,6 @@ function App() {
     bad: 0,
   };
   
-<<<<<<< HEAD
-=======
-
-  const updateFeedback = (event) => {
-    console.log(event);
-  };
->>>>>>> 816aea6f9b60dc740f803f26df64a9456e8b1fbe
 
   const [cafeState, setCafeState] = useState(() => {
 
@@ -39,7 +28,6 @@ function App() {
 
   const updateFeedback = (event) => {
 
-<<<<<<< HEAD
     if (event==='reset') {setCafeState(cafeStateInitial)} 
     else
      {setCafeState({ ...cafeState, [event]: cafeState[event] + 1 })};
@@ -49,22 +37,16 @@ function App() {
 
 
 
-=======
->>>>>>> 816aea6f9b60dc740f803f26df64a9456e8b1fbe
   
   return (
     
     <div>
       <Discription />
       <Options updateFeedback={updateFeedback} />
-<<<<<<< HEAD
       <Feedback cafeState={cafeState}/>
-=======
-      <Feedback/>
->>>>>>> 816aea6f9b60dc740f803f26df64a9456e8b1fbe
     </div>
   )
 
-}
+};
 
 export default App
