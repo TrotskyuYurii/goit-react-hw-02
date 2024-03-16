@@ -2,6 +2,7 @@
 
 const Feedback = ({cafeState, totalState}) => {
 
+
   return (
     <div>
         <ul>
