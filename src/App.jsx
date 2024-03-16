@@ -42,7 +42,7 @@ function App() {
   return (
     <div>
       <Discription />
-      <Options updateFeedback={updateFeedback} />
+      <Options updateFeedback={updateFeedback} cafeState={cafeState}/>
       <Feedback cafeState={cafeState} totalState={totalState} possitivePercent={possitivePercent}/>
     </div>
   )

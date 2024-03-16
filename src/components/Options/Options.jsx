@@ -1,12 +1,16 @@
 
 
-const Options = ({updateFeedback}) => {
+const Options = ({cafeState, updateFeedback}) => {
+
+  const hasFeedback = cafeState.good > 0 || cafeState.neutral > 0 || cafeState.bad > 0;
+
+
   return (
     <div>
       <button onClick={() => updateFeedback("good")} >Good</button>
       <button onClick={() => updateFeedback("neutral")} >Neutral</button>
       <button onClick={() => updateFeedback("bad")} >Bad</button>
-      <button onClick={() => updateFeedback("reset")} >Reset</button>
+      {hasFeedback && <button onClick={() => updateFeedback("reset")} >Reset</button>}
     </div>
   )
 }
