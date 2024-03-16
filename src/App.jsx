@@ -33,11 +33,17 @@ function App() {
     setTotalState(cafeState.good + cafeState.neutral + cafeState.bad);
   }, [cafeState]);
 
+  const [possitivePercent, setPossitivePercent] = useState(0);
+
+  useEffect(() => {
+    setPossitivePercent(Math.round(((cafeState.good + cafeState.neutral) / totalState) * 100));
+  }, [cafeState]);
+
   return (
     <div>
       <Discription />
       <Options updateFeedback={updateFeedback} />
-      <Feedback cafeState={cafeState} totalState={totalState}/>
+      <Feedback cafeState={cafeState} totalState={totalState} possitivePercent={possitivePercent}/>
     </div>
   )
 };

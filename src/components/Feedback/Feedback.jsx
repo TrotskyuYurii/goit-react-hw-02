@@ -1,6 +1,6 @@
 
 
-const Feedback = ({cafeState, totalState}) => {
+const Feedback = ({cafeState, totalState, possitivePercent}) => {
 
 
   return (
@@ -10,7 +10,7 @@ const Feedback = ({cafeState, totalState}) => {
             <li>Neutral: {cafeState.neutral}</li>
             <li>Bad: {cafeState.bad}</li>
             <li>Total: {totalState}</li>
-            <li>Possitive: 80%</li>
+            <li>Possitive: {possitivePercent}%</li>
         </ul>
     </div>
   )
