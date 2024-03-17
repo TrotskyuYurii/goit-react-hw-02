@@ -24,8 +24,6 @@ function App() {
     localStorage.setItem("cafeStateValue", JSON.stringify(cafeState));
   }, [cafeState]);
 
-  const [totalState, setTotalState] = useState(0);
-
   const updateFeedback = (event) => {
     if (event === 'reset') {
       setCafeState(cafeStateInitial);
@@ -34,27 +32,18 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    setTotalState(cafeState.good + cafeState.neutral + cafeState.bad);
-  }, [cafeState]);
 
-  const [possitivePercent, setPossitivePercent] = useState(0);
 
-useEffect(() => {
-  if (totalState !== 0) {
-    setPossitivePercent(Math.round(((cafeState.good + cafeState.neutral) / totalState) * 100));
-  } else {
-    setPossitivePercent(0); 
-  }
-}, [cafeState, totalState]);
+
+
 
 
   return (
     <div>
       <Discription />
       <Options updateFeedback={updateFeedback} cafeState={cafeState}/>
-      <Feedback cafeState={cafeState} totalState={totalState} possitivePercent={possitivePercent}/>
-      <Notification totalState={totalState}/>
+      <Feedback cafeState={cafeState} />
+      <Notification cafeState={cafeState}/>
     </div>
   )
 };

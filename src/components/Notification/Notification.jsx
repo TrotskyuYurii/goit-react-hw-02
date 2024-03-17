@@ -1,4 +1,6 @@
-const Notification = ({totalState}) => {
+const Notification = ({cafeState}) => {
+
+    const totalState = cafeState.good+cafeState.bad+cafeState.neutral;
   
     return (
         <>
