@@ -1,4 +1,4 @@
-const Discription = () => {
+const Description = () => {
   return (
     <div> 
         <h2>Sip Happens Café</h2>
@@ -7,4 +7,4 @@ const Discription = () => {
   )
 }
 
-export default Discription
+export default Description
