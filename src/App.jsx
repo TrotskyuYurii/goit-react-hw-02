@@ -35,15 +35,20 @@ function App() {
 
 
 
-
+  const total = cafeState.good + cafeState.bad + cafeState.neutral;
+  const possitivePercent = total !== 0 ? Math.round(((cafeState.good + cafeState.neutral) / total) * 100) : 0;
 
 
   return (
     <div>
       <Description />
-      <Options updateFeedback={updateFeedback} cafeState={cafeState}/>
-      <Feedback cafeState={cafeState} />
-      <Notification cafeState={cafeState}/>
+      <Options updateFeedback={updateFeedback} total={total}/>
+
+      {total > 0 ? (
+        <Feedback cafeState={cafeState} total={total} possitivePercent={possitivePercent}/>
+      ) : (
+        <Notification />
+      )}
     </div>
   )
 };

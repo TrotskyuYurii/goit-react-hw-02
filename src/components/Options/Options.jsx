@@ -1,8 +1,8 @@
 import css from "../Options/Options.module.css";
 
-const Options = ({cafeState, updateFeedback}) => {
+const Options = ({total, updateFeedback}) => {
 
-  const hasFeedback = cafeState.good > 0 || cafeState.neutral > 0 || cafeState.bad > 0;
+  const hasFeedback = total > 0;
 
 
   return (
