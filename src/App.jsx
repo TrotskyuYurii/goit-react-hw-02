@@ -4,6 +4,7 @@ import './App.css'
 import Discription from './components/Discription/Discription.jsx'
 import Options from './components/Options/Options.jsx'
 import Feedback from './components/Feedback/Feedback.jsx'
+import Notification from './components/Notification/Notification.jsx'
 
 function App() {
   
@@ -53,6 +54,7 @@ useEffect(() => {
       <Discription />
       <Options updateFeedback={updateFeedback} cafeState={cafeState}/>
       <Feedback cafeState={cafeState} totalState={totalState} possitivePercent={possitivePercent}/>
+      <Notification totalState={totalState}/>
     </div>
   )
 };
